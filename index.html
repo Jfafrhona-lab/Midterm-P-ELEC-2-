@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Jollibee Webpage</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #ffdd00;
+        }
+
+        header, footer {
+            background-color: #D32F2F;
+            color: white;
+            text-align: center;
+            padding: rem;
+            width: 100%;
+            height: 60px;
+            font-style: Garamond;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            right:0;
+            z-index: 100;
+            padding-left: 10%;
+        }
+
+        .logo {
+            float: left ; 
+            margin-right: 1rem;
+            
+        }
+
+        nav {
+            display: inline-block;
+            vertical-align: middle;
+            border: 3px black solid;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            right: -250px; 
+            height: 250%;
+            transition:right 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar ul {
+            padding: 20;
+            color: white;
+        }
+
+        .sidebar ul li {
+            width: none;
+            padding: none;
+            margin-bottom: none ;
+            border-radius:none;
+        }
+
+        .menu-button {
+            position: fixed;
+            top: 15px;
+            right: 5px;
+            background-color: #A47F66;
+            color: white;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 100;
+       }
+        /* Footer Styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content {
+            padding: 180px 20px;
+            margin-left: 20px;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 0;
+            margin-bottom: 10px;
+            width: 80px;
+        }
+
+        nav ul li select {
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 200px;
+        }
+
+        .content {
+            padding: 100px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with logo and navigation -->
+    <header>
+        <img src="Jollibeelogo.jpg" alt="Jollibee Logo" class="logo" width="50" height="50">
+        <h1>Jollibee</h1>
+        <nav>
+            <ul>
+                <li>
+                    <select>
+                        <option selected>Home</option>
+                        <option>Welcome Message</option>
+                        <option>Featured Meals</option>
+                        <option>Customer Reviews</option>
+                    </select>
+                </li>
+                <li>
+                    <select>
+                        <option selected>About</option>
+                        <option>Story</option>
+                        <option>Team</option>
+                        <option>Awards</option>
+                    </select>
+                </li>
+                <li>
+                    <select>
+                        <option selected>Services</option>
+                        <option>Menu</option>
+                        <option>Catering</option>
+                        <option>Custom Orders</option>
+                    </select>
+                </li>
+                <li>
+                    <select>
+                        <option selected>Contact</option>
+                        <option>Contact Form</option>
+                        <option>Email</option>
+                        <option>Phone Number</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="jollibeeSidebar">
+        <ul>
+        <li>
+            <h1>Bestseller</h1>
+            <ul>
+                <li>Family Meals</li>
+                <li>Chickenjoy</li>
+                <li>Jolly Spaghetti</li>
+                </ul>
+        </li>
+        <li>
+            <h2>New Products</h2>
+            <ul>
+                <li>Breakfast</li>
+                <li>Burgers</li>
+                <li>Burger Steak</li>
+                </ul>
+        </li>
+        </ul>
+    </div>
+
+    <!-- Menu button to toggle sidebar -->
+    <button class="menu-button" onclick="toggleSidebar()">☰ Menu</button>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>Welcome to Jollibee</h1>
+        <p>Enjoy your favorite Jollibee meals and learn more about us.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jollibee. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("jollibeeSidebar");
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
